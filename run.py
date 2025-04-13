@@ -12,9 +12,13 @@ def home():
 
 @app.route('/submit', methods=["POST"])
 def submit():
-    text = request.form['text']
-    suggestion = counselling(text)
-    return render_template('base.html', suggestion = suggestion), suggestion
+    try:
+        text = request.form['text']
+        suggestion = counselling(text)
+        return render_template('base.html', suggestion = suggestion), suggestion
+    except Exception as e:
+        print(str(e))
+        return str(e)
 
 if __name__ == '__main__':
     app.run()
