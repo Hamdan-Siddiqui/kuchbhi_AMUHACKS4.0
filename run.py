@@ -5,20 +5,18 @@ app = Flask(__name__)
 
 text = ""
 suggestion = ""
-
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def home():
+    if request.method == "POST":
+        try:
+            text = request.form['text']
+            suggestion = counselling(text)
+            return render_template("base.html", suggestion=suggestion), suggestion
+        except Exception as e:
+            print(str(e))
+            return str(e)
     return render_template("base.html")
 
-@app.route('/submit', methods=["POST"])
-def submit():
-    try:
-        text = request.form['text']
-        suggestion = counselling(text)
-        return render_template('base.html', suggestion = suggestion), suggestion
-    except Exception as e:
-        print(str(e))
-        return str(e)
 
 if __name__ == '__main__':
     app.run()
