@@ -6,10 +6,14 @@ load_dotenv()
 
 def counselling(text):
     given_text = text
-    if not os.getenv("GOOGLE_API_KEY"):
+    my_api_key = os.getenv("GOOGLE_API_KEY")
+    print("*****************"+my_api_key[-4:])
+    if not my_api_key or my_api_key == "":
         raise "GOOGLE API KEY is misisng."
     
-    client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+
+    
+    client = genai.Client(api_key=my_api_key)
 
     response = client.models.generate_content(
         model="gemini-2.0-flash",
