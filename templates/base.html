@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>MindDoor</title>
     <link rel="stylesheet" href="../static/style.css">
+    
 </head>
 
 <body>
@@ -14,19 +15,26 @@
     </header>
 
     <div>
-        <h2>How are you feeling today ?</h2>
-        <form action="/" method="GET">
-        <textarea id="text" name="text" rows="10" cols="60"></textarea>
-        <input type="submit" value="Submit">
+        <h2>How are you feeling today?</h2>
+        <form action="/process" method="GET">
+            <textarea id="text" name="text" rows="10" cols="60"></textarea>
+            <input type="submit" value="Submit">
         </form>
-        {% if suggestion %}
-            <p>{{suggestion}}</p>
-        {% endif %}
     </div>
 
     <footer>
         <h1>Made on 13th of April 2025</h1>
     </footer>
 </body>
+
+<script>
+//    const suggestion = "{{ suggestion | safe }}";
+    
+//    if (suggestion && suggestion !== "null" && suggestion !== "") {
+//        document.getElementById("suggestion_box").innerHTML = suggestion;
+//    } else {
+//        document.getElementById("suggestion_box").innerHTML = "No suggestion available.";
+//    }
+</script>
 
 </html>

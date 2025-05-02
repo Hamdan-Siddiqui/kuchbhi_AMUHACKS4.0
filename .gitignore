@@ -1,2 +1,5 @@
 /.env
 /__pycache__
+model.py
+templates/signup.html
+templates/login.html

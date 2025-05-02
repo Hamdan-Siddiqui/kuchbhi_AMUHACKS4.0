@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>MindDoor</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>MindDoor</h1>
+    </header>
+
+    <h2 id="suggestion_box"></h2>
+
+    <div class="activities">
+        <div id="box1" onclick="handleclick(1)">
+            <h3 id="head1"></h3>
+            <h4 id="subhead1"></h4>
+        </div>
+
+        <div id="box2" onclick="handleclick(2)">
+            <h3 id="head2"></h3>
+            <h4 id="subhead2"></h4>
+        </div>
+
+        <div id="box3" onclick="handleclick(3)">
+            <h3 id="head3"></h3>
+            <h4 id="subhead3"></h4>
+        </div>
+
+        <div id="box4" onclick="handleclick(4)">
+            <h3 id="head4"></h3>
+            <h4 id="subhead4"></h4>
+        </div>
+
+        <div id="box5" onclick="handleclick(5)">
+            <h3 id="head5"></h3>
+            <h4 id="subhead5"></h4>
+        </div>
+    </div>
+
+    <footer>
+        <h1>Made on 13th of April 2025</h1>
+    </footer>
+
+    <script>
+        const suggestion = "{{ suggestion | safe }}";
+        const emotion = "{{ emotion | safe }}";
+
+        if (suggestion && suggestion !== "null" && suggestion !== "") {
+            document.getElementById("suggestion_box").innerHTML = suggestion;
+        } else {
+            document.getElementById("suggestion_box").innerHTML = "No suggestion available.";
+        }
+
+        if (emotion && emotion === "Happiness / Joy / Contentment") {
+            document.getElementById("head1").innerHTML = 'Journaling';
+            document.getElementById("subhead1").innerHTML = "Capture this positive feeling in your journal! What's making you happy today?";
+
+            document.getElementById("head2").innerHTML = 'Goal Setting';
+            document.getElementById("subhead2").innerHTML = "Feeling good is a great time to review your goals or set new, exciting ones.";
+
+            document.getElementById("head3").innerHTML = 'Creative Expression';
+            document.getElementById("subhead3").innerHTML = "Let your joy flow! Try drawing, writing, or making some music in our creative space.";
+
+            document.getElementById("head4").innerHTML = 'Mindfulness';
+            document.getElementById("subhead4").innerHTML = "Savor this moment with a short mindfulness exercise.";
+
+            document.getElementById("head5").innerHTML = 'Planning';
+            document.getElementById("subhead5").innerHTML = "Plan something fun for yourself or with loved ones.";
+
+        } else if (emotion === "Sadness / Grief / Disappointment") {
+            document.getElementById("head1").innerHTML = 'Chat with our Experts';
+            document.getElementById("subhead1").innerHTML = "You are not alone, our experts are there for you";
+
+            document.getElementById("head2").innerHTML = 'Journaling';
+            document.getElementById("subhead2").innerHTML = "Write down your feelings. Sometimes expressing them can help.";
+
+            document.getElementById("head3").innerHTML = 'Unleash your Creativity';
+            document.getElementById("subhead3").innerHTML = "Let your emotions flow on our canvas.";
+
+            document.getElementById("head4").innerHTML = 'Mindfulness';
+            document.getElementById("subhead4").innerHTML = "Maybe helping others might help you feel better.";
+
+            document.getElementById("head5").innerHTML = 'Call a Friend';
+            document.getElementById("subhead5").innerHTML = "Maybe talking to a loved one might help.";
+
+        } else if (emotion === "Anxiety / Worry / Nervousness") {
+            document.getElementById("head1").innerHTML = 'Chat with our Experts';
+            document.getElementById("subhead1").innerHTML = "You are not alone, our experts are there for you";
+
+            document.getElementById("head2").innerHTML = 'Thought Journal';
+            document.getElementById("subhead2").innerHTML = "Write down your worries. Sometimes seeing them can help manage them.";
+
+            document.getElementById("head3").innerHTML = 'Unleash your Creativity';
+            document.getElementById("subhead3").innerHTML = "Let your creativity bring you some calm.";
+
+            document.getElementById("head4").innerHTML = 'Mindfulness';
+            document.getElementById("subhead4").innerHTML = "Maybe helping others might help you feel better.";
+
+            document.getElementById("head5").innerHTML = 'Call a Friend';
+            document.getElementById("subhead5").innerHTML = "Maybe talking to a loved one might help.";
+
+        } else if (emotion === "Anger / Frustration / Irritability") {
+            document.getElementById("head1").innerHTML = 'Chat with our Experts';
+            document.getElementById("subhead1").innerHTML = "You are not alone, our experts are there for you";
+
+            document.getElementById("head2").innerHTML = 'Journaling';
+            document.getElementById("subhead2").innerHTML = "Express your anger in a healthy way by writing about it.";
+
+            document.getElementById("head3").innerHTML = 'Unleash your Creativity';
+            document.getElementById("subhead3").innerHTML = "Let your creativity bring you some calm.";
+
+            document.getElementById("head4").innerHTML = 'Mindfulness';
+            document.getElementById("subhead4").innerHTML = "Maybe helping others might help you feel better.";
+
+            document.getElementById("head5").innerHTML = 'Call a Friend';
+            document.getElementById("subhead5").innerHTML = "Maybe talking to a loved one might help.";
+
+        } else if (emotion === "Fear / Panic") {
+            document.getElementById("head1").innerHTML = 'Chat with our Experts';
+            document.getElementById("subhead1").innerHTML = "You are not alone, our experts are there for you";
+
+            document.getElementById("head2").innerHTML = 'Journaling';
+            document.getElementById("subhead2").innerHTML = "Express your fear in a healthy way by writing about it.";
+
+            document.getElementById("head3").innerHTML = 'Unleash your Creativity';
+            document.getElementById("subhead3").innerHTML = "Let your creativity bring you some calm.";
+
+            document.getElementById("head4").innerHTML = 'Mindfulness';
+            document.getElementById("subhead4").innerHTML = "Maybe helping others might help you feel better.";
+
+            document.getElementById("head5").innerHTML = 'Call a Friend';
+            document.getElementById("subhead5").innerHTML = "Maybe talking to a loved one might help.";
+
+        } else if (emotion === "Tiredness / Fatigue / Low Energy") {
+            document.getElementById("head1").innerHTML = 'Chat with our Experts';
+            document.getElementById("subhead1").innerHTML = "You are not alone, our experts are there for you";
+
+            document.getElementById("head2").innerHTML = 'Journaling';
+            document.getElementById("subhead2").innerHTML = "Write down what you're feeling—let it out.";
+
+            document.getElementById("head3").innerHTML = 'Planning';
+            document.getElementById("subhead3").innerHTML = "Planning something fun may bring your energy back.";
+
+            document.getElementById("head4").innerHTML = 'Mindfulness';
+            document.getElementById("subhead4").innerHTML = "Take a moment to rest and breathe.";
+
+            document.getElementById("head5").innerHTML = 'Call a Friend';
+            document.getElementById("subhead5").innerHTML = "Maybe talking to a loved one might help.";
+
+        } else if (emotion === "Confusion / Disorientation") {
+            document.getElementById("head1").innerHTML = 'Chat with our Experts';
+            document.getElementById("subhead1").innerHTML = "You are not alone, our experts are there for you";
+
+            document.getElementById("head2").innerHTML = 'Journaling';
+            document.getElementById("subhead2").innerHTML = "Try to write down what you're feeling and experiencing.";
+
+            document.getElementById("head3").innerHTML = 'Planning';
+            document.getElementById("subhead3").innerHTML = "Organizing small tasks might bring clarity.";
+
+            document.getElementById("head4").innerHTML = 'Mindfulness';
+            document.getElementById("subhead4").innerHTML = "Try a grounding exercise to center yourself.";
+
+            document.getElementById("head5").innerHTML = 'Call a Friend';
+            document.getElementById("subhead5").innerHTML = "Talk things through with someone you trust.";
+        }
+
+        function handleclick(boxNumber){
+            let activity = document.getElementById(`head${boxNumber}`).innerText;
+
+            const routemap = {
+                'Journaling': '/journaling',
+                'Goal Setting': '/goal-setting',
+                'Creative Expression': '/creativity',
+                'Mindfulness': '/mindfulness',
+                'Planning': '/planning',
+                'Chat with our Experts': '/chat',
+                'Unleash your Creativity': '/creativity',
+                'Thought Journal': '/thought-journal',
+                'Call a Friend': '/call-a-friend'
+            }
+
+            const route = routemap[activity];
+            if (route){
+                window.location.href = route; 
+            }else{
+                alert("No Route Found For this Activity");
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
