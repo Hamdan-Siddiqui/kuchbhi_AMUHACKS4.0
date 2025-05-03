@@ -28,13 +28,12 @@
 </body>
 
 <script>
-//    const suggestion = "{{ suggestion | safe }}";
-    
-//    if (suggestion && suggestion !== "null" && suggestion !== "") {
-//        document.getElementById("suggestion_box").innerHTML = suggestion;
-//    } else {
-//        document.getElementById("suggestion_box").innerHTML = "No suggestion available.";
-//    }
+    document.getElementById("text").addEventListener("keypress", function(event) {
+        if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault(); // Prevents new line
+            document.querySelector("form").submit();
+        }
+    });
 </script>
 
 </html>
